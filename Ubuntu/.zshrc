@@ -21,17 +21,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 # vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
-
-function _update_vcs_info_msg() {
-      LANG=en_US.UTF-8 vcs_info
-          RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
+if [ -f ~/.vcs_info ]; then
+  . ~/.vcs_info
+fi
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -76,7 +68,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 
 # common alias
-# enable color
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -87,12 +78,16 @@ alias lla='ll -A'
 alias l='ls'
 
 # do interactively
-alias rm='rm -i'
+if type trash > /dev/null 2>&1; then
+  alias rm='trash'
+else
+  alias rm='rm -i'
+fi
 alias mv='mv -i'
 alias cp='cp -i'
 
 # global alias
-alias -g C='| pbcopy'
+alias -g C='| xsel --clipboard --input'
 alias -g G="| grep"
 alias -g L="| less"
 alias -g H="| head"
@@ -100,16 +95,7 @@ alias -g T="| tail"
 alias -g S="| sort"
 alias -g W="| wc"
 
-alias .='cd ../'
-alias ..='cd ../../'
-
 # user alias
 if [ -f ~/.zsh_aliases ]; then
    source  ~/.zsh_aliases
 fi
-
-# pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-
