@@ -1,23 +1,25 @@
-# .zprofile
+# .zprofile 環境依存
 
-# Get the aliases and functions
-if [ -f $HOME/.zshrc ]; then
-    . $HOME/.zshrc
-fi
+PROMPT="%F{cyan}[%n@%m]%f %~
+$ "
 
 export LANG=ja_JP.UTF-8
 
-PATH="/usr/games:/usr/local/games:/snap/bin"
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+export PATH=/usr/games:/usr/local/games:/snap/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
 # cuda
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+if type pyenv > /dev/null 2>&1;then
+  eval "$(pyenv init -)"
+fi
 
 # direnv
-eval "$(direnv hook zsh)"
+if type direnv > /dev/null 2>&1;then
+  eval "$(direnv hook zsh)"
+fi
