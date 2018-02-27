@@ -92,6 +92,11 @@ elif [ `uname` = 'Darwin' ]; then
   alias ls='ls -G'
   alias grep='grep --color=always'
 fi
+if type colordiff > /dev/null 2>&1; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
 
 # extensive ls
 alias la='ls -A'
