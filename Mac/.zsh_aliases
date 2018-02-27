@@ -1,0 +1,1 @@
+alias rm_ds_store='find ~ -name ".DS_Store" -print -exec rm {} ";"'
