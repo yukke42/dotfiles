@@ -8,7 +8,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # command prompt
-PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
+PROMPT="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
 $ "
 
 # completions
