@@ -85,14 +85,11 @@ fi
 
 ### aliases ###
 # enable color
-if type ls --color=auto > /dev/null 2>&1; then
+if [ `uname` = 'Linux' ]; then
   alias ls='ls --color=auto'
-else
-  alias ls='ls -G'
-fi
-if type grep --color=auto > /dev/null 2>&1; then
   alias grep='grep --color=auto'
-else
+elif [ `uname` = 'Darwin' ]; then
+  alias ls='ls -G'
   alias grep='grep --color=always'
 fi
 
@@ -102,7 +99,7 @@ alias ll='ls -lh'
 alias lla='ll -A'
 alias l='ls'
 
-if type trash > /dev/null 2>&1;then
+if type trash > /dev/null 2>&1; then
   alias rm='trash'
 else
   alias rm='rm -i'
@@ -111,9 +108,9 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 # global alias
-if type bpcopy > /dev/null 2>&1;then
+if type bpcopy > /dev/null 2>&1; then
   alias -g C='| pbcopy'
-elif type xsel > /dev/null 2>&1;then
+elif type xsel > /dev/null 2>&1; then
   alias -g C='| xsel --clipboard --input'
 fi
 alias -g G="| grep"
