@@ -113,7 +113,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 # global alias
-if type bpcopy > /dev/null 2>&1; then
+if type pbcopy > /dev/null 2>&1; then
   alias -g C='| pbcopy'
 elif type xsel > /dev/null 2>&1; then
   alias -g C='| xsel --clipboard --input'

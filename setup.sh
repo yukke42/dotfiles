@@ -13,3 +13,7 @@ for f in .??* $(uname)/.??*; do
 
   ln -fnsv $PWD/$f ~/$(basename $f)
 done
+
+if type vim > /dev/null 2>&1; then
+  vim +PluginInstall +qall
+fi
