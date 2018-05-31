@@ -1,3 +1,7 @@
 alias rm_ds_store='find ~ -name ".DS_Store" -print -exec rm {} ";"'
 alias typora='open -a Typora'
-alias vsc='open -a Visual\ Studio\ Code'
+alias code='open -a Visual\ Studio\ Code'
+alias mine='open -a RubyMine'
+alias webstorm='open -a WebStorm'
+alias updatedb='/usr/libexec/locate.updatedb'
+
