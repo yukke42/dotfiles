@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [[ $SHELL != *"bash" ]]; then
   echo "Shell is not bash."
   exit
