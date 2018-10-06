@@ -23,3 +23,9 @@ fi
 if type direnv > /dev/null 2>&1;then
   eval "$(direnv hook zsh)"
 fi
+
+# pycharm
+if [ -d "$HOME/.local/pycharm-2018.2.4/bin" ] ; then
+    PATH="$HOME/.local/pycharm-2018.2.4/bin:$PATH"
+fi
+
