@@ -134,4 +134,12 @@ fi
 
 # pipenv
 export PIPENV_VENV_IN_PROJECT=true
+
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+
