@@ -120,3 +120,9 @@ export PIPENV_VENV_IN_PROJECT=true
 
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64::$LD_LIBRARY_PATH
+
+export KITTI_DATASET_ROOT=$HOME/KITTI
+
+export NUMBAPRO_CUDA_DRIVER=/usr/lib/x86_64-linux-gnu/libcuda.so
+export NUMBAPRO_NVVM=/usr/local/cuda/nvvm/lib64/libnvvm.so
+export NUMBAPRO_LIBDEVICE=/usr/local/cuda/nvvm/libdevice
