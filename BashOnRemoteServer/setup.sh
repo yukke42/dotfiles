@@ -6,7 +6,7 @@ if [[ $SHELL != *"bash" ]]; then
 fi
 
 for fname in .??*; do
-  if [[ -f ${HOME}/${fname} ]]; then
+  if [[ ! -L ${HOME}/${fname} ]]; then
     cp -fv ${HOME}/${fname} ${HOME}/${fname}.backup
   fi
 
