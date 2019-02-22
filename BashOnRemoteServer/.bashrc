@@ -126,3 +126,9 @@ export KITTI_DATASET_ROOT=$HOME/KITTI
 export NUMBAPRO_CUDA_DRIVER=/usr/lib/x86_64-linux-gnu/libcuda.so
 export NUMBAPRO_NVVM=/usr/local/cuda/nvvm/lib64/libnvvm.so
 export NUMBAPRO_LIBDEVICE=/usr/local/cuda/nvvm/libdevice
+
+alias sqme="sq | grep 166 | sed -r -e 's/ +/ /g' | sort"
+
+# direnv
+eval "$(direnv hook bash)"
+
