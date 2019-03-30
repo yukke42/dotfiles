@@ -26,5 +26,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# cuda
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+# homebrew
 [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# [[ -x /home/linuxbrew/.linuxbrew/bin/pyenv ]] && eval $(pyenv init -)
+export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+[[ -x $HOME/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
