@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $SHELL != *"bash" ]]; then
+  echo "Shell is not bash."
+  exit
+fi
+
+for fname in .??*; do
+  [ -L ${HOME}/${fname} ] && continue
+  ln --symbolic \
+     --force \
+     --verbose \
+     --suffix=.backup \
+     ${PWD}/${fname} ${HOME}/${fname}
+done
+

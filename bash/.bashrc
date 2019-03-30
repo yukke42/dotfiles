@@ -115,3 +115,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+[ -f ~/.inputrc ] && . ~/.inputrc
+
+# Git in Bash
+[ -f ~/.git-prompt.sh ] && . ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\[\033[01;35m\]\u@\h\[\033[01;34m\] \w$(__git_ps1) \n\[\033[00m\]\$ '
