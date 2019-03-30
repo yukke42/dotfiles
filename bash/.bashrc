@@ -116,9 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f ~/.inputrc ] && . ~/.inputrc
+[[ -f ~/.inputrc ]] && . ~/.inputrc
 
 # Git in Bash
-[ -f ~/.git-prompt.sh ] && . ~/.git-prompt.sh
+[[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1) \n\[\033[00m\]\$ '
