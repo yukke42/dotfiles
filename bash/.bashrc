@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# bash completion for mac
+# it is not preinstalled in MacOS
+# do `brew install bash-completion`
+[[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
+
 [[ -f ~/.inputrc ]] && . ~/.inputrc
 
 # Git in Bash
