@@ -25,6 +25,12 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
+# globstar is not supported in defalut bash on macOS
+# $ brew install bash
+# $ chsh -s /usr/local/bin/bash
+# $ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+# $ ln -s /usr/local/bin/bash /usr/local/bin/bash-terminal-app
+# ref: https://apple.stackexchange.com/a/291290
 shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
