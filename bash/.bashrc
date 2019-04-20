@@ -122,8 +122,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# bash completion for mac
-# it is not preinstalled in MacOS
+# bash completion for macOS
+# it is not preinstalled in macOS
 # do `brew install bash-completion`
 [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
 
