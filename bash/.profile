@@ -38,3 +38,6 @@ export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 [[ -x $HOME/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)"
+
+# pipenv: create .venv in a project directory
+export PIPENV_VENV_IN_PROJECT=true
