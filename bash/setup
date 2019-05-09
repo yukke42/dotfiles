@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [[ $SHELL != *"bash" ]]; then
+  echo "Shell is not bash."
+  exit
+fi
+
+if [[ $(uname) == Linux ]]; then
+  for fname in .??*; do
+    [[ -L ${HOME}/${fname} ]] && continue
+    ln --symbolic \
+      --force \
+      --verbose \
+      --suffix=.backup \
+      ${PWD}/${fname} ${HOME}/${fname}
+  done
+elif [[ $(uname) == Darwin ]]; then
+  for fname in .??*; do
+    # [[ -L ${HOME}/${fname} ]] && continue
+    ln -sfhv ${PWD}/${fname} ${HOME}/${fname}
+  done
+fi
+
