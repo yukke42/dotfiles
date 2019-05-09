@@ -1,11 +1,23 @@
 # dotfiles for bash
 
+A simple bash configuration for ubuntu and macOS
+
+
+
 ## Installation
 
 
 ```
 ./setup
 ```
+
+
+
+# Configured System
+
+- pyenv 
+- direnv
+- brew (for macOS)
 
 
 
