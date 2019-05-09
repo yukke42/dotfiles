@@ -31,8 +31,11 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # homebrew for macOS
-[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    echo 'brew is installed'
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
+fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
