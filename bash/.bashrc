@@ -138,3 +138,6 @@ export PS1='\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__gi
 
 # direnv
 [[ -x "$(command -v direnv)" ]] && eval "$(direnv hook bash)"
+
+# kubectl auto-complete for bash
+[[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
