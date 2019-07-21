@@ -37,6 +37,13 @@ if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
     export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
 fi
 
+# homebrew for ubuntu server
+if [[ -x $HOME/.linuxbrew/bin/brew ]]; then
+    echo 'brew is installed'
+    eval $($HOME/.linuxbrew/bin/brew shellenv)
+    export LD_LIBRARY_PATH="$(brew --prefix readline)/lib"
+fi
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
