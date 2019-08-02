@@ -63,7 +63,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -145,3 +145,11 @@ fi
 
 # kubectl auto-complete for bash
 [[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
+
+# for ist-server
+if [ "$USER" = "u00166" ]; then
+    alias sqme="sq | grep u00166 | sed -r -e 's/ +/ /g' | sort"
+    alias sqv="sq | grep v10 | sed -r -e 's/ +/ /g' | sort"
+    alias sqp="sq | grep p10 | sed -r -e 's/ +/ /g' | sort"
+fi
+

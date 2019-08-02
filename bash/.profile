@@ -51,3 +51,17 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 # pipenv: create .venv in a project directory
 export PIPENV_VENV_IN_PROJECT=true
+
+# for ist-server
+if [ "$USER" = "u00166"]; then
+    # source built CMake
+    [[ -x $HOME/.local/share/cmake-3.14 ]] \
+        && export CMAKE_ROOT='$HOME/.local/share/cmake-3.14'
+
+    # for conda
+    [[ -x $HOME/.pyenv/versions/anaconda3-5.3.1/etc/profile.d/conda.sh ]] \
+        && . $HOME/.pyenv/versions/anaconda3-5.3.1/etc/profile.d/conda.sh
+
+    export PATH=$HOME/.pyenv/versions/anaconda3-5.3.1/bin:$PATH
+fi
+
