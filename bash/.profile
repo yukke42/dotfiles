@@ -53,7 +53,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PIPENV_VENV_IN_PROJECT=true
 
 # for ist-server
-if [ "$USER" = "u00166"]; then
+if [ "$USER" = "u00166" ]; then
     # source built CMake
     [[ -x $HOME/.local/share/cmake-3.14 ]] \
         && export CMAKE_ROOT='$HOME/.local/share/cmake-3.14'
