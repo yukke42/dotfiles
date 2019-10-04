@@ -125,7 +125,7 @@ fi
 # bash completion for macOS
 # it is not preinstalled in macOS
 # do `brew install bash-completion`
-[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && \
+[[ -x `which brew` ]] && \
     [[ -f `brew --prefix`/etc/bash_completion ]] && \
     . `brew --prefix`/etc/bash_completion
 
