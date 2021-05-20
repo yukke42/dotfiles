@@ -1,0 +1,12 @@
+# pycharm / clion
+cmake-build-debug
+.idea
+
+# pytorch/libtorch
+pytorch
+libtorch
+trtorch
+
+# ros development
+clang_format.sh
+
